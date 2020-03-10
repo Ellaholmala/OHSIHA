@@ -18,8 +18,9 @@ from django.urls import path, include
 from django.views.generic.base import TemplateView # new
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    #path('', include('applikaatio.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('', TemplateView.as_view(template_name='home.html'), name='home'), # new
+    path('admin/', admin.site.urls), #1 osa
+    #path('', include('applikaatio.urls')), # TARVIIKO?
+    path('accounts/', include('accounts.urls')), # new
+    path('accounts/', include('django.contrib.auth.urls')), #1 osa
+    path('', TemplateView.as_view(template_name='home.html'), name='home'), #1 osa
 ]
