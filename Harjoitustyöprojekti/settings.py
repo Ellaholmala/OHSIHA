@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'applikaatio',
     'accounts.apps.AccountsConfig',
-    'data', # new
+    'data',
+    'electricity'
 ]
 
 MIDDLEWARE = [

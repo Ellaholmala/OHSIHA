@@ -19,9 +19,10 @@ from django.views.generic.base import TemplateView # new
 
 urlpatterns = [
     path('admin/', admin.site.urls), #1 osa
-    #path('', include('applikaatio.urls')), # TARVIIKO?
+    #path('', include('applikaatio.urls')), 
     path('accounts/', include('accounts.urls')), # new
     path('accounts/', include('django.contrib.auth.urls')), #1 osa
     path('data/', include('data.urls')),
     path('', TemplateView.as_view(template_name='home.html'), name='home'), #1 osa
+    path('electricity/', include('electricity.urls')),
 ]

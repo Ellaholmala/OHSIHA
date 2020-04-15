@@ -1,7 +1,6 @@
 <!-- # This file will be used by DeleteView -->
-
-<h1>Data Delete</h1>
+<h1>Data Delete</h1>                        <!-- Delete function! (delete)-->
 <form method="post">{% csrf_token %}
-    Are you sure you want to delete "{{ object }}" ?
-    <input type="submit" value="Submit" />
+    Are you sure you want to delete "{{ object }}" ?    <!-- To assure if user wants to delete object-->
+    <input type="submit" value="Submit" />          <!-- Submit button-->
 </form>

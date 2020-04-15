@@ -1,0 +1,19 @@
+<h1>Electricity data list</h1>
+
+<table>
+<tbody>
+    {% for data in object_list %}
+    <tr>
+    <td>{{ data.variable_id }}</td>
+    <td>{{ data.value}}</td>
+    <td>{{data.start_time}}</td>
+    <td>{{data.end_time}}</td>
+
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+
+
+<!-- Tieto tulee jakaa variable_id:n mukaan eri taulukkoihin-->
