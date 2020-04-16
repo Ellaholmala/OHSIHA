@@ -1,0 +1,40 @@
+<!--
+
+
+
+-->
+<head>
+  
+  
+  <!-- Fengyuan Chen's Datepicker -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css" integrity="sha256-b88RdwbRJEzRx95nCuuva+hO5ExvXXnpX+78h8DjyOE=" crossorigin="anonymous" />
+</head>
+<body>
+  
+  <div class="container">
+      <h1>Select a date from 23.3.2020-29.3.2020 (in XX.YY.ZZZZ format)</h1>
+          <form method ="post">
+            {% csrf_token %}
+            {{ form.date }}
+            <!-- <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+              {{ form.date }}
+              <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+              </div>
+            </div> -->
+            
+            
+            <button type="submit">Submit</button>
+          </form>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script>
+          $(function () {
+            $("#id_date").datepicker({
+              format:'dd.mm.yyyy',
+            });
+          });
+        </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js" integrity="sha256-/7FLTdzP6CfC1VBAj/rsp3Rinuuu9leMRGd354hvk0k=" crossorigin="anonymous"></script> 
+  </div>
+</body>

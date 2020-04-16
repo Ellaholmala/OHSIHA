@@ -1,19 +1,39 @@
-<h1>Electricity data list</h1>
-
-<table>
-<tbody>
-    {% for data in object_list %}
-    <tr>
-    <td>{{ data.variable_id }}</td>
-    <td>{{ data.value}}</td>
-    <td>{{data.start_time}}</td>
-    <td>{{data.end_time}}</td>
-
-    </tr>
-    {% endfor %}
-</tbody>
-</table>
-
-
-
 <!-- Tieto tulee jakaa variable_id:n mukaan eri taulukkoihin-->
+
+    <!-- <div>{{surplus_night}}</div> -->
+    <a href="/electricity/date">Back</a>
+  <div id="container"></div>
+  <script src="https://code.highcharts.com/highcharts.src.js"></script>
+  <script>
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Electricity Data'
+        },
+        xAxis: {
+            categories: ['Night', 'Day', 'Evening']
+        },
+        yAxis: {
+            categories: ["Megawatts"]
+        },
+        series: [{
+            name: 'Surplus/deficit',
+            data: [
+                {% for entry in surplus %} {{ entry }} {% if not forloop.last %}, {% endif %}{% endfor %}
+                ]      
+        }, {
+            name: 'Production',
+            data: [
+            {% for entry in production %} {{ entry }} {% if not forloop.last %}, {% endif %}{% endfor %}
+                ]
+        }, {
+            name: 'Consumption',
+            data: [
+            {% for entry in consumption %} {{ entry  }} {% if not forloop.last %}, {% endif %}{% endfor %}
+                ]
+        }]
+    });
+  </script>
+

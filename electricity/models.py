@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django import forms
 # Create your models here.
 
 class ElectricityData(models.Model): 
@@ -10,3 +11,7 @@ class ElectricityData(models.Model):
 
     def __str__(self):
         return str(self.variable_id)
+        
+
+class DateForm(forms.Form):
+    date = forms.DateTimeField(input_formats=['%d/%m/%Y %H:%M'])
